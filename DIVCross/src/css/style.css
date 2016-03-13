@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 316px;
+    height: 316px;
+    background: linear-gradient(rgb(238, 23, 75), rgb(0, 103, 172));
+    border-radius: 10px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+#container div {
+    width: 100px;
+    height: 100px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .6);
+    border-radius: 8px;
+    border: solid 1px;
+    border-color: #AAAAAA;
+    overflow: hidden;
+}
+
+#container .div1 {
+    background-color: rgb(238, 23, 75);
+    position: absolute;
+    top: 1px;
+    left: 107px;
+    right: 107px;
+}
+
+.div2 {
+    background-color: rgb(206, 135, 28);
+    position: absolute;
+    left: 1px;
+    top: 107px;
+    bottom: 107px;
+}
+
+.div3 {
+    background-color: rgb(255, 255, 255);
+    background: linear-gradient(rgb(238, 23, 75), rgb(0, 103, 172));
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.div4 {
+    background-color: rgb(22, 93, 49);
+    position: absolute;
+    top: 107px;
+    bottom: 107px;
+    right: 1px;
+}
+
+#container .div5 {
+    background-color: rgb(0, 103, 172);
+    position: absolute;
+    bottom: 1px;
+    left: 107px;
+    right: 107px;
+}
+
+img {
+    display: block;
+    position: absolute;
+    margin: auto;
+    width: 24px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
