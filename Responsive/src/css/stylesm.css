@@ -1,0 +1,256 @@
+/*移动版本全局设定*/
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-family: Microsoft JhengHei UI;
+    overflow: scroll;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    height: 100%;
+    min-width: 320px;
+    padding: 0 10px;
+    position: relative;
+    margin: auto;
+}
+
+.headnav {
+    display: none;
+}
+
+#hiddenmenu {
+    display: none;
+}
+
+#setting {
+    display: none;
+}
+
+#text_area {
+    display: none;
+}
+
+.footer {
+    display: none;
+}
+
+.copyright {
+    display: none;
+}
+
+
+/*天气预报栏样式*/
+
+.weather {
+    text-align: left;
+    margin-bottom: -10px;
+}
+
+
+/*移动端搜索框样式*/
+
+.search {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.imagecontainer {
+    text-align: center;
+    position: relative;
+}
+
+.imagecontainer img {
+    width: 211px;
+    height: 108px;
+}
+
+.searchbox {
+    width: 100%;
+    height: 44px;
+}
+
+.text_area {
+    width: 100%;
+    margin-right: 79px;
+    height: 42px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #666666;
+    float: left;
+    text-indent: 6px;
+    font-size: 17px;
+}
+
+.baidubutton {
+    width: 79px;
+    height: 42px;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    color: #666666;
+    margin-left: -100%;
+}
+
+
+/*移动端导航栏样式*/
+
+.navbar {
+    display: flex;
+    padding: 20px 5%;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.navbar a {
+    display: inline-block;
+    height: 45px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #222222;
+}
+
+.navbar a span {
+    display: block;
+    font-size: 14px;
+}
+
+.spe {
+    margin-top: -4px;
+}
+
+
+/*移动端内容区域一样式*/
+
+.content1 {
+    height: 121px;
+    padding: 0 10px;
+    border: 1px solid #BBBBBB;
+    padding-top: 10px;
+}
+
+.content1 img,
+h2 {
+    float: left;
+}
+
+.content1 h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #AAAAAA;
+    margin-top: -2px;
+    margin-left: -2px;
+}
+
+.content1 .btn {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+    background: url(../images/mobile8.png) no-repeat center;
+    float: right;
+}
+
+.content1 div {
+    display: flex;
+    clear: both;
+    /*margin-top: 5px;*/
+    padding: 10px;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.content1 div a {
+    width: 60px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: #333333;
+}
+
+.content1 .row2 {
+    margin-top: -20px;
+}
+
+
+/*移动端内容区域二样式*/
+
+.content2 {
+    margin-top: 15px;
+    height: 230px;
+    padding: 0 10px;
+    border: 1px solid #BBBBBB;
+    padding-top: 10px;
+}
+
+.content2 img,
+h2 {
+    float: left;
+}
+
+.content2 h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #AAAAAA;
+    margin-top: -2px;
+    margin-left: 4px;
+}
+
+.content2 .btn {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+    background: url(../images/mobile8.png) no-repeat center;
+    float: right;
+}
+
+.content2 div {
+    display: flex;
+    clear: both;
+    padding: 10px;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.content2 span {
+    font-size: 13px;
+}
+
+.content2 div a {
+    width: 42px;
+    height: 82px;
+    line-height: 38px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: #333333;
+}
+
+.content2 .row2 {
+    margin-top: -20px;
+}
+
+
+/*移动端页脚样式*/
+
+.mobilefooter {
+    margin-top: 15px;
+}
+
+.mobilefooter a {
+    text-decoration: none;
+    color: #999999;
+}
