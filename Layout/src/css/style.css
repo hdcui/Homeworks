@@ -1,0 +1,77 @@
+/*全局设定*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-size: 18px;
+    font-family: Microsoft JhengHei UI;
+}
+
+/*页面容器格式*/
+.wrapper {
+    min-width: 800px;
+    text-align: center;
+}
+
+/*页面头部格式*/
+.header {
+    height: 150px;
+    line-height: 150px;
+    background-color: rgb(238, 23, 75);
+}
+
+/*内容格式*/
+.content {
+    height: 600px;
+    text-align: left;
+    overflow: hidden;
+}
+
+/*主体内容格式*/
+.main {
+    width: 100%;
+    float: left;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+}
+
+.inner {
+    margin-left: 300px;
+    margin-right: 200px;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    background-color: #bbb;
+}
+
+/*次要内容格式*/
+.sub {
+    width: 300px;
+    float: left;
+    background-color: #FFA500;
+    margin-left: -100%;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+}
+
+/*额外信息内容格式*/
+.extra {
+    width: 200px;
+    float: right;
+    background-color: #02723B;
+    margin-left: -100%;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    /*IE6 IE7格式*/
+    *margin-left: -200px;
+}
+
+/*页面底部格式*/
+.footer {
+    height: 100px;
+    line-height: 100px;
+    background-color: rgb(0, 103, 172);
+}
