@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<!-- 百度新闻页面ejs模板 -->
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <title>百度新闻</title>
+</head>
+
+<body>
+    <!-- 页面主容器 -->
+    <div class="container ">
+        <!-- 页面头部 -->
+        <div class="container-fluid" id="maincontainer">
+            <div class="row header">
+                <div class="col-xs-1 ">
+                    <a class="home" href="#"></a>
+                </div>
+                <div class="col-xs-1">
+                    <a class="user" href="#"></a>
+                </div>
+                <div class="col-xs-8"></div>
+                <div class="col-xs-1">
+                    <a class="search" href="#"></a>
+                </div>
+                <div class="col-xs-1">
+                    <a class="add" href="#"></a>
+                </div>
+            </div>
+            <!-- 页面头部结束 -->
+            <!-- 页面导航栏 -->
+            <div id="navigation">
+                <div class="row nav">
+                    <div class="col-xs-2 ">
+                        <a href="/news/tuijian"<% if(type==='tuijian')  {%>class="selecteditem"<%} %>>推荐</a>
+                    </div>
+                    <div class="col-xs-2">
+                       <a href="/news/baijia"<% if(type==='baijia')  {%>class="selecteditem"<%} %>>百家</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="/news/keji" <% if(type==='keji')  {%>class="selecteditem"<%} %>>科技</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="/news/tiyu"<% if(type==='tiyu')  {%>class="selecteditem"<%} %>>体育</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">娱乐</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">社会</a>
+                    </div>
+                </div>
+                <div class="row nav">
+                    <div class="col-xs-2 ">
+                        <a href="#">军事</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">本地</a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="#">互联网</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">女人</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">搞笑</a>
+                    </div>
+                </div>
+                <div class="row nav">
+                    <div class="col-xs-2 ">
+                        <a href="#">生活</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">国际</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">国内</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">图片</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">汽车</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">财经</a>
+                    </div>
+                </div>
+                <div class="row nav">
+                    <div class="col-xs-2 ">
+                        <a href="#">房产</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">时尚</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">教育</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">游戏</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">旅游</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="#">人文</a>
+                    </div>
+                </div>
+                <div class="row nav">
+                    <div class="col-xs-4 ">
+                        <a href="#">创意</a>
+                    </div>
+                    <div class="col-xs-8">
+                        <a href="#">互联网+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面导航栏结束 -->
+        <!-- 新闻内容展示区 -->
+        <div id="newsarea">
+	<% for(var i=0; i<body.length; i++) {%>
+	    <div class="row news">
+	        <a class="col-xs-12" target="_self" href=<%=body[i].newslink %>>
+	            <img src=<%= body[i].newsimg %>>
+	            <h3><%= body[i].newstitle%></h3>
+	            <p><%= body[i].newscontent %></p>
+	            <span><%= body[i].newsdate %></span>
+	       </a>
+                  </div>
+              <% } %>      
+        </div>
+        <!-- 新闻内容展示区结束 -->
+    </div>
+    <!-- 主页面结束 -->
+</body>
+
+</html>

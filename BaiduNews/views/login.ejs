@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!-- 登录界面ejs模板 -->
+
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>登陆界面</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+
+<body>
+    <!-- login page -->
+    <div class="container">
+        <div class="row">
+            <div id="login" class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+                <!-- logo head bar -->
+                <nav class="navbar bg-primary">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <img alt="Brand" src="../images/logo.png">
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <!-- logo head bar end -->
+                <!-- input area -->
+                <div class="row">
+                    <form class="form-signin col-xs-10 col-xs-offset-1" action="" method="post">
+                        <label for="username" class="sr-only">Email address</label>
+                        <h4 class="login">用户名</h4>
+                        <input type="text" id="username" class="form-control " placeholder="User name" required autofocus name="username">
+                        <label for="password" class="sr-only">Password</label>
+                        <h4 class="login">密码</h4>
+                        <input type="password" id="pwd" class="form-control" placeholder="Password" required name="password">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <input class="btn col-xs-4 btn-lg btn-primary " type="button" value="登陆" id="submit"></input>
+                        <div class="col-xs-2"></div>
+                        <input class="btn col-xs-6 btn-lg btn-danger" type="button" value="点击注册" id="reg"></input>
+                    </form>
+                </div>
+                <!-- input area end -->
+            </div>
+        </div>
+    </div>
+    <!-- login page end -->
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+</body>
+
+</html>

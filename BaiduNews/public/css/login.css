@@ -1,0 +1,37 @@
+/*全局设定*/
+
+body {
+    background: rgb(0, 141, 194);
+    font-family: Microsoft JhengHei UI;
+}
+
+
+/*登录框定位*/
+
+#login {
+    height: 336px;
+    padding: 0 0 30px 0;
+    border-radius: 4px;
+    background-color: rgb(217, 237, 247);
+    box-shadow: -2px -2px 5px rgb(56, 75, 103);
+    box-sizing: content-box;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/*导航条样式*/
+
+.navbar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 30px;
+}
+
+#inputEmail {
+    margin-bottom: 30px;
+}

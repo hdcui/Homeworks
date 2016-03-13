@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!-- 控制台页面ejs模板 -->
+
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>控制台首页</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
+</head>
+
+<body>
+    <!-- 页面主体 -->
+    <div class="wrapper">
+        <!-- 页面头部 -->
+        <header>
+            <h4>数据控制台</h4>
+        </header>
+        <!-- 页面头部结束 -->
+        <!-- 页面左侧分类展示栏 -->
+        <div class="left" id="catalist">
+            <span title="tuijian" class="btn option selected"><span class="glyphicon glyphicon-globe"></span> 推荐</span>
+            <span title="baijia" class="btn option"><span class="glyphicon glyphicon-leaf"></span> 百家</span>
+            <span title="keji" class="btn option"><span class="glyphicon glyphicon-bitcoin"></span> 科技</span>
+            <span title="tiyu" class="btn option"><span class="glyphicon glyphicon glyphicon-pawn"></span> 体育</span>
+        </div>
+        <!-- 页面左侧展示栏结束 -->
+        <!-- 页面右侧控制台操作界面 -->
+        <div class="right">
+            <!-- 数据操作界面 -->
+            <div class="showcase" id="showcase">
+                <form id="panel">
+                    <label for="newstitle">新闻标题：</label>
+                    <input type="text" name="newstitle" class="form-control newstitle"></input>
+                    <label for="newsimg">图片链接：</label>
+                    <input type="text" name="newismg" class="form-control newsimg"></input>
+                    <label for="newscontent">新闻内容：</label>
+                    <input type="text" cols="2" name="newscontent" class="form-control newscontent"></input>
+                    <label for="newslink">新闻地址：</label>
+                    <input type="text" name="newslink" class="form-control newslink"></input>
+                    <label for="newsdate">编辑时间：</label>
+                    <input type="date" name="newsdate" class="newsdate form-control"></input>
+                    <button type="button" class="btn btn-info" id="add">添加</button>
+                    <button type="button" class="btn btn-success disabled" id="update">更新</button>
+                    <button type="reset" class="btn btn-warning" id="reset">重置</button>
+                </form>
+            </div>
+            <!-- 数据操作界面结束 -->
+            <!-- 数据展示列表 -->
+            <div class="tablecontainer">
+                <table class="table table-striped" id="tablelist">
+                    <thead>
+                        <th>新闻索引</th>
+                        <th>新闻标题</th>
+                        <th>图片链接</th>
+                        <th>新闻内容</th>
+                        <th>新闻地址</th>
+                        <th>修改时间</th>
+                        <th>操作</th>
+                    </thead>
+                </table>
+            </div>
+            <!-- 数据展示列表结束 -->
+        </div>
+        <!-- 页面右侧控制台操作界面结束 -->
+        <footer>
+            <p>BlueWhale management system</p>
+        </footer>
+    </div>
+    <!-- 页面主体结束 -->
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/dashboard.js"></script>
+</body>
+
+</html>
