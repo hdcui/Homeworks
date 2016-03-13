@@ -1,0 +1,570 @@
+/*全局设定*/
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    height: 100%;
+    font-family: Microsoft JhengHei UI;
+    font-size: 12px;
+}
+
+
+/*网页容器*/
+
+.wrapper {
+    min-width: 1000px;
+    max-width: 1920px;
+    height: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+
+/*网页头部*/
+
+header {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    background: rgb(0, 0, 0);
+}
+
+
+/*导航栏及logo容器*/
+
+.head {
+    width: 1000px;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.head img {
+    float: left;
+    margin-top: -17px;
+}
+
+.head .arw {
+    position: absolute;
+    margin: auto;
+    top: 38px;
+    right: 527px;
+}
+
+
+/*导航栏标签及样式*/
+
+.head a {
+    display: inline-block;
+    float: right;
+    text-decoration: none;
+    padding-left: 37px;
+    font-size: 19px;
+    color: #01A5DD;
+    line-height: 50px;
+}
+
+
+/*各部分内容容器全局样式*/
+
+article div {
+    width: 100%;
+    height: 540px;
+}
+
+
+/*正文第一部分*/
+
+article .part1 {
+    background: #03A3DA;
+}
+
+.view {
+    width: 1000px;
+    position: absolute;
+    margin: auto;
+    top: 60px;
+    left: 0;
+    right: 0;
+}
+
+.arw1 {
+    position: absolute;
+    top: 134px;
+    left: -100px;
+}
+
+.phone {
+    position: absolute;
+    top: 100px;
+    right: -56px;
+    z-index: 3;
+}
+
+.view h1 {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    font-size: 44px;
+    color: #fff;
+}
+
+.view p {
+    position: absolute;
+    top: 222px;
+    left: 0;
+    font-size: 19px;
+    color: #fff;
+}
+
+.view input {
+    position: absolute;
+    font-size: 20px;
+    font-family: Microsoft JhengHei UI;
+    color: #fff;
+    width: 122px;
+    height: 42px;
+    background: #F29400;
+    border-radius: 8px;
+    border: none;
+    top: 260px;
+    left: 0;
+}
+
+
+/*正文第二部分*/
+
+article .part2 {
+    background: #FFFFFF;
+}
+
+.smarthome {
+    width: 1000px;
+    position: absolute;
+    margin: auto;
+    top: 600px;
+    left: 0;
+    right: 0;
+    background: #FFFFFF url(../images/icon1.png) no-repeat 0 310px;
+    z-index: 4;
+    text-align: center;
+}
+
+.smarthome h1 {
+    font-size: 32px;
+    margin-top: 40px;
+}
+
+.smarthome p {
+    font-size: 20px;
+    color: #B2B2B2;
+    margin-bottom: 10px;
+}
+
+.smarthome span {
+    display: block;
+    width: 481px;
+    color: #7B7B7B;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.smarthome a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+    color: #000;
+    margin-top: 260px;
+    margin-right: 222px;
+}
+
+.smarthome .last {
+    margin: 0;
+}
+
+
+/*正文第三部分*/
+
+article .part3 {
+    background: rgb(0, 0, 0) url(../images/bg0.fw.png) no-repeat center;
+    overflow: hidden;
+}
+
+.overlay {
+    width: 100%;
+    height: 540px;
+}
+
+.part3 .overlay {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.part3 .show {
+    width: 1000px;
+    position: absolute;
+    margin: auto;
+    top: 1140px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.show h1 {
+    font-size: 32px;
+    margin-top: 40px;
+    color: #FFFFFF;
+}
+
+.show p {
+    font-size: 20px;
+    color: #B2B2B2;
+    margin-bottom: 10px;
+}
+
+.show span {
+    display: block;
+    width: 481px;
+    color: #DDDDDD;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+.show div {
+    display: inline-block;
+    width: 240px;
+    height: 140px;
+    background: #FFFFFF;
+    margin: 3px;
+}
+
+
+/*第三部分展示栏*/
+
+.show .case1 {
+    background: url(../images/case1.png) no-repeat center;
+}
+
+.show .case2 {
+    background: url(../images/case2.png) no-repeat center;
+}
+
+.show .case3 {
+    background: url(../images/case3.png) no-repeat center;
+}
+
+.show .case4 {
+    background: url(../images/case4.png) no-repeat center;
+}
+
+.show .case5 {
+    background: url(../images/case5.png) no-repeat center;
+}
+
+.show .case6 {
+    background: url(../images/case6.png) no-repeat center;
+}
+
+.show .case7 {
+    background: url(../images/case7.png) no-repeat center;
+}
+
+.show .case8 {
+    background: url(../images/case8.png) no-repeat center;
+}
+
+
+/*正文第四部分*/
+
+article .part4 {
+    background: url(../images/psd17852_r2_c1_r2_c1.fw.png) no-repeat center;
+}
+
+.part4 .fcreate {
+    width: 1000px;
+    position: absolute;
+    margin: auto;
+    top: 1680px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.fcreate h1 {
+    font-size: 32px;
+    margin-top: 40px;
+    color: #000000;
+}
+
+.fcreate p {
+    font-size: 20px;
+    color: #B2B2B2;
+    margin-bottom: 10px;
+}
+
+.fcreate span {
+    display: block;
+    width: 700px;
+    color: #7B7B7B;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+
+/*正文第五部分*/
+
+article .part5 {
+    background: url(../images/bg1.png) no-repeat center;
+}
+
+.part5 .info {
+    width: 1000px;
+    position: absolute;
+    margin: auto;
+    top: 2220px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.info h1 {
+    font-size: 32px;
+    margin-top: 40px;
+    color: #FFFFFF;
+}
+
+.info p {
+    font-size: 20px;
+    color: #B2B2B2;
+    margin-bottom: 10px;
+}
+
+.info span {
+    display: block;
+    width: 481px;
+    color: #BBBBBB;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+
+/*正文第六部分*/
+
+article .part6 {
+    background: url(../images/background.png) no-repeat center;
+}
+
+.part6 .overlay {
+    background: url(../images/flow.png) no-repeat center;
+}
+
+.part6 .join {
+    width: 1000px;
+    position: absolute;
+    margin: auto;
+    top: 2760px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.join h1 {
+    font-size: 32px;
+    margin-top: 40px;
+    color: #FFFFFF;
+}
+
+.join p {
+    font-size: 20px;
+    color: #B2B2B2;
+    margin-bottom: 10px;
+}
+
+.join span {
+    display: block;
+    width: 481px;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+.join b {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bolder;
+    position: absolute;
+}
+
+.b1 {
+    left: -41px;
+    top: 219px;
+}
+
+.b2 {
+    left: 116px;
+    top: 387px;
+}
+
+.b3 {
+    left: 275px;
+    top: 328px;
+}
+
+.b4 {
+    left: 440px;
+    top: 424px;
+}
+
+.b5 {
+    left: 566px;
+    top: 310px;
+}
+
+.b6 {
+    left: 770px;
+    top: 360px;
+}
+
+.b7 {
+    right: -24px;
+    top: 222px;
+}
+
+
+/*正文第七部分*/
+
+article .part7 {
+    background: url(../images/map.png) no-repeat center;
+}
+
+.part7 .overlay {
+    background: linear-gradient(rgb(2, 157, 210), rgb(3, 97, 145));
+    opacity: .9;
+}
+
+.part7 .contact {
+    width: 1000px;
+    position: absolute;
+    margin: auto;
+    top: 3300px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 9999;
+}
+
+.contact h1 {
+    font-size: 32px;
+    margin-top: 30px;
+    color: #FFFFFF;
+}
+
+.contact p {
+    font-size: 20px;
+    color: #B2B2B2;
+    margin-bottom: 10px;
+}
+
+.contact span {
+    display: block;
+    width: 456px;
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+
+/*第七部分联系人信息及公司信息*/
+
+.contact .box {
+    width: 50%;
+    height: 400px;
+    text-align: left;
+}
+
+.contact .box span {
+    display: block;
+    margin: 0;
+    margin-top: 1px;
+    background: #5BB3E2;
+    width: 456px;
+    height: 42px;
+    font-size: 13px;
+    line-height: 42px;
+    text-indent: 20px;
+}
+
+.contact .box .des {
+    height: 129px;
+}
+
+.contact .box input {
+    border: none;
+    background-color: inherit;
+    height: 36px;
+    margin: auto 0;
+}
+
+.contact .box .tel {
+    background: #FFFFFF;
+    color: #333333;
+}
+
+.contact .box .btn {
+    text-indent: 0;
+    text-align: center;
+    background: #F29400;
+}
+
+.contact .box .btn input {
+    width: 456px;
+    height: 42px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: Microsoft JhengHei UI;
+}
+
+.contact .detail {
+    position: absolute;
+    margin: auto;
+    top: 210px;
+    right: 116px;
+}
+
+
+/*底部声明*/
+
+footer {
+    height: 40px;
+    text-align: center;
+    background: #000000;
+}
+
+footer span {
+    display: block;
+    width: 1000px;
+    line-height: 40px;
+    color: #FFFFFF;
+    position: absolute;
+    margin: auto;
+    top: 3840px;
+    left: 0;
+    right: 0;
+}
