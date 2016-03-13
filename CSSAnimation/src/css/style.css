@@ -1,0 +1,544 @@
+/*全局样式*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/*火车绘图区容器*/
+
+.wrapper {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-animation: moving 5s linear infinite;
+    -o-animation: moving 5s linear infinite;
+    animation: moving 5s linear infinite;
+}
+
+
+/*火车绘图区*/
+
+.train {
+    width: 500px;
+    height: 360px;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+/*火车头突出部样式*/
+
+.heading-bottom {
+    width: 106px;
+    border-bottom: 28px solid rgb(89, 82, 79);
+    border-left: 14px solid transparent;
+    border-bottom-left-radius: 5px;
+    position: absolute;
+    bottom: 85px;
+    left: 25px;
+}
+
+.heading-top {
+    width: 85px;
+    height: 20px;
+    background-color: rgb(89, 82, 79);
+    border-top-left-radius: 30px 20px;
+    position: absolute;
+    bottom: 120px;
+    left: 42px;
+}
+
+
+/*火车头主体样式*/
+
+.mainbody {
+    width: 330px;
+    height: 125px;
+    background-color: rgb(89, 82, 79);
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 30px 60px;
+    border-bottom-left-radius: 30px 60px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/*火车头装饰图形样式*/
+
+.head-dec1 {
+    width: 24px;
+    height: 44px;
+    border-radius: 5px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: rgb(89, 82, 79);
+    position: absolute;
+    margin: auto;
+    left: 71px;
+    top: 0;
+    bottom: 0;
+}
+
+.head-dec2 {
+    width: 285px;
+    height: 16px;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    position: absolute;
+    right: 85px;
+    top: 145px;
+    z-index: 999;
+}
+
+.head-dec3 {
+    width: 24px;
+    height: 29px;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    background-color: rgb(89, 82, 79);
+    position: absolute;
+    top: 89px;
+    left: 109px;
+}
+
+.head-dec4 {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 103px;
+    left: 196px;
+}
+
+.dec5-top {
+    box-sizing: border-box;
+    width: 40px;
+    border-bottom: 8px solid rgb(89, 82, 79);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: absolute;
+    top: -8px;
+}
+
+.dec5-bottom {
+    width: 40px;
+    height: 22px;
+    background-color: rgb(89, 82, 79);
+    position: absolute;
+}
+
+.head-dec5 {
+    position: absolute;
+    left: 223px;
+    top: 101px;
+}
+
+.dec6-left {
+    width: 14px;
+    height: 20px;
+    background-color: rgb(89, 82, 79);
+    position: absolute;
+    margin: auto;
+    left: -14px;
+    top: 0;
+    bottom: 0;
+}
+
+.dec6-right {
+    width: 22px;
+    height: 36px;
+    background-color: rgb(89, 82, 79);
+    position: absolute;
+    border-radius: 5px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.head-dec6 {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 153px;
+    right: 35px;
+}
+
+
+/*驾驶室样式*/
+
+.cabin {
+    width: 135px;
+    height: 115px;
+    background-color: rgb(89, 82, 79);
+    position: absolute;
+    right: 85px;
+    top: 38px;
+}
+
+.window {
+    width: 90px;
+    height: 75px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.scar1 {
+    width: 15px;
+    border: 1px solid rgb(89, 82, 79);
+    position: absolute;
+    -webkit-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg);
+    -o-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+    left: 26px;
+    top: 25px;
+}
+
+.scar2 {
+    width: 35px;
+    border: 1px solid rgb(89, 82, 79);
+    position: absolute;
+    -webkit-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg);
+    -o-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+    left: 26px;
+    top: 31px;
+}
+
+.scar3 {
+    width: 20px;
+    border: 1px solid rgb(89, 82, 79);
+    position: absolute;
+    -webkit-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg);
+    -o-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+    left: 45px;
+    top: 35px;
+}
+
+.roof {
+    width: 155px;
+    height: 22px;
+    background-color: rgb(89, 82, 79);
+    border-radius: 11px;
+    position: absolute;
+    top: -30px;
+    left: -10px;
+}
+
+
+/*烟囱样式*/
+
+.chimney {
+    width: 48px;
+    height: 110px;
+    position: absolute;
+    top: 9px;
+    left: 150px;
+}
+
+.chim-top {
+    box-sizing: border-box;
+    width: 48px;
+    height: 40px;
+    background-color: rgb(89, 82, 79);
+    border-radius: 5px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.chim-bottom {
+    width: 30px;
+    height: 70px;
+    background-color: rgb(89, 82, 79);
+    margin: 0 auto;
+}
+
+
+/*车轮样式*/
+
+.wheel {
+    box-sizing: border-box;
+    width: 295px;
+    height: 96px;
+    border: 16px solid rgb(255, 255, 255);
+    border-radius: 96px;
+    position: absolute;
+    bottom: 62px;
+    left: 107px;
+}
+
+.wheel div {
+    box-sizing: border-box;
+    width: 94px;
+    height: 94px;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+.wheel div div {
+    box-sizing: border-box;
+    width: 84px;
+    height: 84px;
+    border: 16px solid rgb(47, 169, 192);
+    border-top: 16px solid rgb(182, 64, 94);
+    border-bottom: 16px solid rgb(182, 64, 94);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgb(120, 120, 120), rgb(89, 82, 79));
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-animation: rotating 1s linear infinite;
+    -o-animation: rotating 1s linear infinite;
+    animation: rotating 1s linear infinite;
+}
+
+.wheel .wheel1 {
+    position: absolute;
+    top: -14px;
+    left: -12px;
+}
+
+.wheel .wheel2 {
+    position: absolute;
+    margin: auto;
+    top: -14px;
+    left: 0;
+    right: 0;
+}
+
+.wheel .wheel3 {
+    position: absolute;
+    top: -14px;
+    right: -12px;
+}
+
+
+/*烟囱烟雾样式*/
+
+.cycle1 {
+    box-sizing: border-box;
+    width: 30px;
+    height: 14px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 3px solid rgb(89, 82, 79);
+    position: absolute;
+    top: -12px;
+    left: 159px;
+    -webkit-animation: flow1 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+    -o-animation: flow1 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+    animation: flow1 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+}
+
+.cycle2 {
+    box-sizing: border-box;
+    width: 45px;
+    height: 21px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 3px solid rgb(89, 82, 79);
+    position: absolute;
+    top: -42px;
+    left: 186px;
+    -webkit-animation: flow2 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+    -o-animation: flow2 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+    animation: flow2 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+}
+
+.cycle3 {
+    box-sizing: border-box;
+    width: 60px;
+    height: 34px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 3px solid rgb(89, 82, 79);
+    position: absolute;
+    top: -72px;
+    left: 242px;
+    -webkit-animation: flow3 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+    -o-animation: flow3 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+    animation: flow3 0.2s cubic-bezier(0.79, 0, 0.99, 0.33)infinite;
+}
+
+
+/*火车头运动效果*/
+
+@-webkit-keyframes moving {
+    0% {
+        -webkit-transform: translateX(-500px);
+    }
+    100% {
+        -webkit-transform: translateX(100%);
+    }
+}
+
+@-o-keyframes moving {
+    0% {
+        -o-transform: translateX(-500px);
+    }
+    100% {
+        -o-transform: translateX(100%);
+    }
+}
+
+@keyframes moving {
+    0% {
+        transform: translateX(-500px);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/*烟囱冒烟效果*/
+
+@-webkit-keyframes flow1 {
+    0% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(34px) translateY(-30px) scaleX(1.5) scaleY(1.5);
+    }
+}
+
+@-o-keyframes flow1 {
+    0% {
+        -o-transform: translateX(0);
+    }
+    100% {
+        -o-transform: translateX(34px) translateY(-30px) scaleX(1.5) scaleY(1.5);
+    }
+}
+
+@keyframes flow1 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(34px) translateY(-30px) scaleX(1.5) scaleY(1.5);
+    }
+}
+
+@-webkit-keyframes flow2 {
+    0% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(65px) translateY(-30px) scaleX(1.33) scaleY(1.33);
+    }
+}
+
+@-o-keyframes flow2 {
+    0% {
+        -o-transform: translateX(0);
+    }
+    100% {
+        -o-transform: translateX(65px) translateY(-30px) scaleX(1.33) scaleY(1.33);
+    }
+}
+
+@keyframes flow2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(65px) translateY(-30px) scaleX(1.33) scaleY(1.33);
+    }
+}
+
+@-webkit-keyframes flow3 {
+    0% {
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(78px) translateY(-30px) scaleX(1.33) scaleY(1.33);
+    }
+}
+
+@-o-keyframes flow3 {
+    0% {
+        -o-transform: translateX(0);
+    }
+    100% {
+        -o-transform: translateX(78px) translateY(-30px) scaleX(1.33) scaleY(1.33);
+    }
+}
+
+@keyframes flow3 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(78px) translateY(-30px) scaleX(1.33) scaleY(1.33);
+    }
+}
+
+
+/*车轮转动效果*/
+
+@-webkit-keyframes rotating {
+    0% {
+        -webkit-transform: rotateZ(0);
+    }
+    100% {
+        -webkit-transform: rotateZ(-360deg);
+    }
+}
+
+@-o-keyframes rotating {
+    0% {
+        -o-transform: rotateZ(0);
+    }
+    100% {
+        -o-transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
