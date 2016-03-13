@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>百度一下，你就知道</title>
+    <link rel="icon" type="image/x-ico" href="./src/img/baidu-icon.ico" />
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+    <script type="text/javascript" src="./src/js/jquery.js"></script>
+    <!--[if IE ]>
+
+    <script>
+    $(function() {
+        //autofocus 
+        $('[autofocus]:not(:focus)').eq(0).focus();
+        //placeholder 
+        var input = document.createElement("input");
+        if (('placeholder' in input) == false) {
+            $('[placeholder]').focus(function() {
+                var i = $(this);
+                if (i.val() == i.attr('placeholder')) {
+                    i.val('').removeClass('placeholder');
+                    if (i.hasClass('password')) {
+                        i.removeClass('password');
+                        this.type = 'password';
+                    }
+                }
+            }).blur(function() {
+                var i = $(this);
+                if (i.val() == '' || i.val() == i.attr('placeholder')) {
+                    if (this.type == 'password') {
+                        i.addClass('password');
+                        this.type = 'text';
+                    }
+                    i.addClass('placeholder').val(i.attr('placeholder'));
+                }
+            }).blur().parents('form').submit(function() {
+                $(this).find('[placeholder]').each(function() {
+                    var i = $(this);
+                    if (i.val() == i.attr('placeholder'))
+                        i.val('');
+                })
+            });
+        }
+    });
+    </script>
+
+    <![endif]-->
+</head>
+
+<body>
+    <!-- page container -->
+    <div class="wrapper">
+        <!-- page head -->
+        <div class="header">
+            <!-- navigation -->
+            <div class="headnav">
+                <a href="http://news.baidu.com/" target="_blank"><b>新闻</b></a>
+                <a href="http://www.hao123.com/" target="_blank"><b>hao123</b></a>
+                <a href="http://map.baidu.com/" target="_blank"><b>地图</b></a>
+                <a href="http://v.baidu.com/i" target="_blank"><b>视频</b></a>
+                <a href="http://tieba.baidu.com/" target="_blank"><b>贴吧</b></a>
+                <a class="login" href="https://passport.baidu.com/v2/?login">登录</a>
+                <a class="set" onmouseover="document.getElementById('setting').style.display='block';" onmouseout="document.getElementById('setting').style.display='none';">设置</a>
+                <a class="more" onmouseover="document.getElementById('hiddenmenu').style.display='block';" onmouseout="document.getElementById('hiddenmenu').style.display='none';">更多产品</a>
+            </div>
+            <!-- navigation end -->
+            <!-- hiddenmenu -->
+            <div id="hiddenmenu" onmouseover="document.getElementById('hiddenmenu').style.display='block';" onmouseout="document.getElementById('hiddenmenu').style.display='none';">
+                <div class="moreproducts">
+                    <a href="">更多产品</a>
+                </div>
+                <div class="nuomi">
+                    <a href="http://www.nuomi.com/"><img src="./src/img/nuomi.png">
+                        <p>糯米</p>
+                    </a>
+                </div>
+                <div class="zhidao">
+                    <a href="http://zhidao.baidu.com/"><img src="./src/img/zhidao.png">
+                        <p>知道</p>
+                    </a>
+                </div>
+                <div class="music">
+                    <a href="http://music.baidu.com/"><img src="./src/img/yinyue.png">
+                        <p>音乐</p>
+                    </a>
+                </div>
+                <div class="photo">
+                    <a href="http://image.baidu.com/"><img src="./src/img/tupian.png">
+                        <p>图片</p>
+                    </a>
+                </div>
+                <div class="lib">
+                    <a href="http://wenku.baidu.com/"><img src="./src/img/wenku.png">
+                        <p>文库</p>
+                    </a>
+                </div>
+                <div class="rank">
+                    <a href="http://top.baidu.com/"><img src="./src/img/rank.png">
+                        <p>风云榜</p>
+                    </a>
+                </div>
+                <div class="spread">
+                    <a href="http://e.baidu.com/"><img src="./src/img/spread.png">
+                        <p>百度推广</p>
+                    </a>
+                </div>
+                <div class="allproducts">
+                    <a href="https://www.baidu.com/more/">
+                        <p>全部产品&gt;&gt;</p>
+                    </a>
+                </div>
+            </div>
+            <!-- hidden menu end -->
+            <!-- setting menu -->
+            <div id="setting" onmouseover="document.getElementById('setting').style.display='block';" onmouseout="document.getElementById('setting').style.display='none';">
+                <div class="arrow">
+                    <div class="arw0"></div>
+                    <div class="arw1"></div>
+                </div>
+                <a href="">搜索设置</a>
+                <a href="">高级搜索</a>
+                <a href="">关闭预测</a>
+                <a href="">搜索历史</a>
+            </div>
+            <!-- setting menu end -->
+            <!-- search box -->
+            <div class="search">
+                <div class="imagecontainer">
+                    <img src="./src/img/bd_logo1.png" />
+                </div>
+                <div class="searchbox">
+                    <form action="https://www.baidu.com/s" method="get" target="_self">
+                        <input id="text_area" class="text_area" name="wd" type="textarea" autofocus="autofocus" onfocus="this.style.border='1px solid rgb(57, 139, 251)';" onblur="this.style.border='solid 1px rgb(200, 200, 200)';" />
+                        <input class="baidubutton" type="submit" value="百度一下" />
+                    </form>
+                </div>
+            </div>
+            <!-- search box end -->
+        </div>
+        <!-- page head end -->
+        <!-- page foot -->
+        <div class="footer">
+            <div class="others">
+                <a href="">把百度设为主页</a>
+                <a href="http://home.baidu.com/">关于百度</a>
+                <a href="http://ir.baidu.com/phoenix.zhtml?c=188488&p=irol-homeprofile">About Baidu</a>
+            </div>
+            <div class="copyright">
+                <span>&copy;2015&nbsp;Baidu&nbsp;</span>
+                <a href="https://www.baidu.com/duty/">使用前必读</a>
+                <span>&nbsp;</span>
+                <a href="http://jianyi.baidu.com/">意见反馈</a>
+                <span>&nbsp;京ICP证030173号</span>
+                <img src="./src/img/20150928192715.png" />
+            </div>
+        </div>
+        <!-- page foot end -->
+    </div>
+    <!-- page container end -->
+</body>
+
+</html>
