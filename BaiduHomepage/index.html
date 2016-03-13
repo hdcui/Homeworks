@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+@require jquery
+@require index.js
+@require style.css
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>百度一下，你就知道</title>
+    <link rel="icon" type="image/x-ico" href="./images/baidu-icon.ico" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./sprite.css">
+</head>
+
+<body>
+    <span id="top" name="top"></span>
+    <!-- page container -->
+    <div class="wrapper">
+        <!-- page head -->
+        <div class="header">
+            <iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=2&t=0&v=0&d=3&bd=0&k=&f=&q=1&e=1&a=1&c=54511&w=180&h=36&align=center"></iframe>
+            <!-- navigation -->
+            <div class="headnav">
+                <a href="http://www.nuomi.com/" target="_blank"><b>糯米</b></a>
+                <a href="http://news.baidu.com/" target="_blank"><b>新闻</b></a>
+                <a href="http://www.hao123.com/" target="_blank"><b>hao123</b></a>
+                <a href="http://map.baidu.com/" target="_blank"><b>地图</b></a>
+                <a href="http://v.baidu.com/i" target="_blank"><b>视频</b></a>
+                <a href="http://tieba.baidu.com/" target="_blank"><b>贴吧</b></a>
+                <a class="login" id="user" href="#">UserName</a>
+                <a class="set" id="setting" href="#">设置</a>
+                <a class="more" id="more">更多产品</a>
+            </div>
+        </div>
+        <!-- navigation end -->
+        <!-- hiddenmenu -->
+        <div id="hiddenmenu">
+            <ul>
+                <li class="moreproducts">
+                    <span>更多产品</span>
+                </li>
+                <li class="music">
+                    <a href="http://music.baidu.com/"><img class="music-img" src="http://www.xcwljy.cn/images/pixel.gif">
+                        <p>音乐</p>
+                    </a>
+                </li>
+                <li class="zhidao">
+                    <a href="http://zhidao.baidu.com/"><img class="zhidao-img" src="http://www.xcwljy.cn/images/pixel.gif">
+                        <p>知道</p>
+                    </a>
+                </li>
+                <li class="photo">
+                    <a href="http://image.baidu.com/"><img class="photo-img" src="http://www.xcwljy.cn/images/pixel.gif">
+                        <p>图片</p>
+                    </a>
+                </li>
+                <li class="lib">
+                    <a href="http://wenku.baidu.com/"><img class="lib-img" src="http://www.xcwljy.cn/images/pixel.gif">
+                        <p>文库</p>
+                    </a>
+                </li>
+                <li class="rank">
+                    <a href="http://top.baidu.com/"><img class="rank-img" src="http://www.xcwljy.cn/images/pixel.gif">
+                        <p>风云榜</p>
+                    </a>
+                </li>
+                <li class="spread">
+                    <a href="http://e.baidu.com/"><img class="spread-img" src="http://www.xcwljy.cn/images/pixel.gif">
+                        <p>百度推广</p>
+                    </a>
+                </li>
+                <li class="allproducts">
+                    <a href="https://www.baidu.com/more/">
+                        <p>全部产品&gt;&gt;</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- hidden menu end -->
+        <!-- setting menu -->
+        <div class="popdown" id="setmenu">
+            <div class="arrow">
+                <div class="arw0"></div>
+                <div class="arw1"></div>
+            </div>
+            <a href="#">搜索设置</a>
+            <a href="#">高级搜索</a>
+            <a href="#">关闭预测</a>
+            <a href="#">搜索历史</a>
+        </div>
+        <div class="popdown" id="usermenu">
+            <div class="arrow">
+                <div class="arw0"></div>
+                <div class="arw1"></div>
+            </div>
+            <a href="#">我的VIP</a>
+            <a href="#">个人中心</a>
+            <a href="#">账号设置</a>
+            <a href="#">意见反馈</a>
+            <a href="#">退出</a>
+        </div>
+        <!-- setting menu end -->
+        <!-- search box -->
+        <div class="search">
+            <div class="imagecontainer">
+                <img src=".\images\bd_logo1.png" />
+            </div>
+            <div class="searchbox">
+                <form action="https://www.baidu.com/s" method="get" target="_self">
+                    <input id="text_area" class="text_area" name="wd" type="text" autofocus="autofocus" />
+                    <input class="baidubutton" type="submit" value="百度一下" />
+                </form>
+            </div>
+        </div>
+        <!-- search box end -->
+        <!-- page head end -->
+        <a id="returntop" href="#top"></a>
+        <div class="content">
+            <div id="tags">
+                <ul>
+                    <li class="我的关注 tag">我的关注</li>
+                </ul>
+                <div class="option"></div>
+                <div class="optionarea">
+                    <div class="selectedoptions">
+                        <p>已订阅频道</p>
+                        <span>我的关注</span>
+                    </div>
+                    <div class="deselectedoptions">
+                        <p>未订阅频道</p>
+                        <span class="deselecteditem">体育</span>
+                        <span class="deselecteditem">导航</span>
+                        <span class="deselecteditem">购物</span>
+                        <span class="deselecteditem">视频</span>
+                        <span class="deselecteditem">小说</span>
+                    </div>
+                </div>
+                <!-- user center -->
+                <section id="userset" class="realsec">
+                    <a class="active" href="#"><span class="subarrow"></span>我的导航</a>
+                    <div class="tips">您还没有关注任何网址，赶快添加吧！</div>
+                    <a class="active" href="#"><span class="subarrow"></span>我的视频</a>
+                    <div class="tips">您还没有关注任何网址，赶快添加吧！</div>
+                    <a class="active" href="#"><span class="subarrow"></span>我的小说</a>
+                    <div class="tips">您还没有关注任何网址，赶快添加吧！</div>
+                    <a class="active" href="#"><span class="subarrow"></span>我的股票</a>
+                    <div class="tips">您还没有关注任何网址，赶快添加吧！</div>
+                </section>
+                <!-- user center end -->
+                <!-- sport's news -->
+                <section id="sport" class="体育">
+                    <div class="contentarea">
+                        <div class="leftpart">
+                            <div class="slideshow">
+                                <img src="./images/1.jpg">
+                            </div>
+                            <div class="sportnews">
+                                <img src="./images/news1.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">爱跑运动营：缓解压力 释放心情 和睦家庭</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">跑团名称的出处，跑团理念--本着健康快乐为原则，爱跑运动营用积极乐观坚持的跑步理念影响着身边的跑友和想运动的人，让他们通过跑步，缓解压力，释放心情，和睦家庭，和谐社会。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                            <div class="sportnews">
+                                <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/a686c9177f3e67092571bb273dc79f3df9dc55f1.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">离奇!男子中千万百日而亡 富商领巨奖后遭毒杀</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">彩票可以让人一夜暴富，但却不是每个人都能有福享受，甚至在巨奖到手的那一刻，便有意料之外的不幸与悲剧伴随而来。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                            <div class="sportnews">
+                                <img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/b2de9c82d158ccbfb31244e21fd8bc3eb03541b8.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">曝埃神恩师正与鲁能谈判 曾率队夺世俱杯冠军</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">北京时间11月28日消息，据《ESPN》巴西版报道，山东鲁能正在与巴甲豪门弗拉门戈主教练奥斯瓦尔多-奥利维拉谈判，奥利维拉很有可能离开弗拉门戈。奥斯瓦尔多-奥利维拉是广州恒大外援埃尔克森的恩师，曾经多次与山东鲁能传出绯闻。奥利维拉在执教鹿岛鹿角期间，实现了J1联赛连三冠。2000年，奥利维拉带领科林蒂安队夺得首届世俱杯冠军。奥利维拉成为继梅内塞斯之后近期第二位与山东鲁能传出绯闻的主教练。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                            <div class="sportnews">
+                                <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/d439b6003af33a8760bcfbc2c05c10385243b511.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">花滑大奖赛浅田真央季军 李子君第七无缘总决赛</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">北京时间11月28日，2015年国际滑联花样滑冰大奖赛日本站结束了第二天的争夺。在女单自由滑比赛中，短节目排在第一的日本选手宫原知子奉献出全场最完整的自由滑夺冠。美国选手希克斯险胜日本的浅田真央获得银牌。美国的瓦格内尔排在第四。这样日本的宫原知子、浅田真央和美国的瓦格内尔就携手晋级总决赛。我国的李子君最终排在第七位。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                            <div class="sportnews">
+                                <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/c8177f3e6709c93d889bfb2f993df8dcd00054f9.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">南京马拉松参赛攻略：补给点与厕位要牢记</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">南京马拉松明天开跑，对于挑战半程跟全程的跑友来说，记住沿途的补给站跟移动厕所位置十分重要，这不仅能够解决不必要的询问和等待，更能够使跑友把注意力全部放在比赛上。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                            <div class="sportnews">
+                                <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/7af40ad162d9f2d3067ade37afec8a136227ccfb.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">UFC韩国赛-雏量级宁广友3回合判定惜败贝尔特兰</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">北京时间11月28日消息，UFC韩国赛在首尔奥林匹克体育馆正式上演。宁广友(Ning Guangyou) VS 马可-贝尔特兰(Marco Beltran)的雏量级作为作为副赛部分的第二场对决上演。比赛一开始双方都打得非常谨慎，贝尔特兰通过不断的前踢来试探对手，宁广友则在闪避的同时以刺拳回击，激烈的对攻并没有在首回合发生。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                            <div class="sportnews">
+                                <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/d53f8794a4c27d1ef38ca51c1dd5ad6edcc438bb.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">F1阿布扎比站第3次练习：维泰尔圈速威胁到梅奔</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">北京时间11月28日晚，2015年F1收官战阿布扎比站第3次练习赛在亚斯湾赛道结束。梅赛德斯车队依然统治着圈速，罗斯博格成为唯一一位跑进1分42秒大关的车手并抢占头名位置，他的队友汉密尔顿落后0.281秒第二，法拉利车队维泰尔成为距离梅奔最近的车手。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                            <div class="sportnews">
+                                <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/ac6eddc451da81cb31717d155466d01608243156.jpg">
+                                <div>
+                                    <h3>
+                                <a href="#">跑完南马去哪嗨？ 南京吃喝玩乐攻略大放送</a>
+                                </h3>
+                                    <p>
+                                        <a href="#">2015南京国际马拉明天就将鸣枪起跑，作为六朝古都，跑完马拉松就离开绝对会是一大遗憾，那么问题来了，跑完南马干点啥呢？小编为您整理了一份吃喝玩乐终极攻略，你想要的这里都有。</a>
+                                    </p>
+                                    <span>今日 18:37</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rightpart">
+                            <div class="listhead">
+                                <ul id="sportlist">
+                                    <li class="chosenitem">全部</li>
+                                    <li>篮球</li>
+                                    <li>足球</li>
+                                </ul>
+                            </div>
+                            <div class="listboard showlist">
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>德甲</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/b219ebc4b74543a9beab731418178a82b80114b1.jpg">
+                                        </a>
+                                        <a href="#">柏林赫塔</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/962bd40735fae6cd5b9723b909b30f2443a70fc2.jpg">
+                                        </a>
+                                        <a href="#">曼城</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>英超</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/37d12f2eb9389b508d7a698a8335e5dde6116e65.jpg">
+                                        </a>
+                                        <a href="#">南安普顿</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/3b292df5e0fe99256a7ce18832a85edf8cb171f2.jpg">
+                                        </a>
+                                        <a href="#">巴塞罗那</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>西甲</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/d6ca7bcb0a46f21f3ce4d78bf0246b600d33ae12.jpg">
+                                        </a>
+                                        <a href="#">皇家社会</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listboard">
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/562c11dfa9ec8a131ff4ca38f103918fa1ecc078.jpg">
+                                        </a>
+                                        <a href="#">猛龙</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>NBA</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/9e3df8dcd100baa1d8b1db634110b912c9fc2e4c.jpg">
+                                        </a>
+                                        <a href="#">奇才</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/5ab5c9ea15ce36d350ed78e83cf33a87e850b179.jpg">
+                                        </a>
+                                        <a href="#">篮网</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>NBA</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/241f95cad1c8a786c338d5d66109c93d71cf50d3.jpg">
+                                        </a>
+                                        <a href="#">骑士</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>德甲</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listboard">
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>德甲</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>德甲</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                    <div class="gameinfo">
+                                        <h4>德甲</h4>
+                                        <p>28日 22:30</p>
+                                        <a href="#">图文</a>
+                                    </div>
+                                    <div class="teaminfo">
+                                        <a href="#">
+                                            <img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b634adaef880a338744eaf8ac23.jpg">
+                                        </a>
+                                        <a href="#">拜仁慕尼黑</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- sport's news end -->
+                <!-- websites navigation -->
+                <section id="navi" class="导航">
+                    <div>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/42166d224f4a20a4192cdc2b96529822720ed028.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/80cb39dbb6fd5266d2feddf8ad18972bd5073600.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/8644ebf81a4c510fab8c02f66659252dd52aa596.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/ae51f3deb48f8c542cd325c33c292df5e1fe7fde.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/d1160924ab18972bd117e026e0cd7b899e510a28.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/78310a55b319ebc4965596758426cffc1e171628.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/50da81cb39dbb6fd521005ca0f24ab18962b3796.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0d338744ebf81a4c201f0c25d12a6059252da629.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/a044ad345982b2b744b2d92837adcbef76099b29.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/c75c10385343fbf23a6746cfb67eca8064388f97.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/7aec54e736d12f2e1e4e4e8c49c2d56284356897.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/f2deb48f8c5494ee4af6eef52bf5e0fe98257e02.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/6609c93d70cf3bc77a4b2d00d700baa1cc112a97.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/43a7d933c895d143bca105cf75f082025baf0702.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/f703738da97739129df1648dfe198618377ae203.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/a8ec8a13632762d0a5e94553a6ec08fa503dc603.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/ae51f3deb48f8c542cff25c33c292df5e0fe7f2a.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0823dd54564e9258181866029a82d158ccbf4e2a.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/ae51f3deb48f8c542cd125c33c292df5e1fe7fd8.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/48540923dd54564e5a2f04d5b5de9c82d0584f90.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/bba1cd11728b471055651d20c5cec3fdfd032390.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0d338744ebf81a4c201d0c25d12a6059252da62b.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/267f9e2f0708283820db3df8be99a9014d08f10c.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/7aec54e736d12f2e1e2a4e8c49c2d5628535682b.jpg"></a>
+                    </div>
+                    <h3>资讯信息</h3>
+                    <div>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/a8ec8a13632762d0a5e94553a6ec08fa503dc603.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/f636afc379310a5593f43f18b14543a98326100d.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/43a7d933c895d143bca105cf75f082025baf0702.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/aa64034f78f0f736b3b9aced0c55b319eac41392.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/7aec54e736d12f2e1e4e4e8c49c2d56284356897.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/f2deb48f8c5494ee4af6eef52bf5e0fe98257e02.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0b46f21fbe096b639d66bebc0a338744eaf8acdb.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/b2de9c82d158ccbfa29555d61fd8bc3eb1354135.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/9825bc315c6034a89c32596dcd1349540823760e.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/9358d109b3de9c821cb518636a81800a18d8430e.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/9f2f070828381f30d6316d45af014c086e06f036.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/86d6277f9e2f070816d6cbecef24b899a801f20f.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/b21c8701a18b87d61d044bf3010828381e30fd9c.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/6a63f6246b600c33e8aa3f241c4c510fd8f9a10f.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/730e0cf3d7ca7bcb6d3d27c3b8096b63f724a89c.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/f703738da97739129eb1658dfe198618377ae243.jpg"></a>
+                    </div>
+                    <h3>娱乐休闲</h3>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0823dd54564e9258181866029a82d158ccbf4e2a.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/f703738da97739129df1648dfe198618377ae203.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/8cb1cb13495409231b1783929458d109b2de49e4.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/48540923dd54564e5a2f04d5b5de9c82d0584f90.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/83025aafa40f4bfbecfb7eb8054f78f0f7361836.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/1ad5ad6eddc451da7c88ec07b0fd5266d11632e4.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/ae51f3deb48f8c542cff25c33c292df5e0fe7f2a.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0d338744ebf81a4c201d0c25d12a6059252da62b.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/9f2f070828381f30d6326d45af014c086e06f037.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/562c11dfa9ec8a132c31b70cf103918fa0ecc037.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/4d086e061d950a7b4474ae280cd162d9f3d3c99d.jpg"></a>
+                    </div>
+                    <h3>购物海淘</h3>
+                    <div>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/42166d224f4a20a4192cdc2b96529822720ed028.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/50da81cb39dbb6fd521005ca0f24ab18962b3796.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/91529822720e0cf3b2b6ae170c46f21fbf09aa9d.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/4bed2e738bd4b31cb0aa745781d6277f9f2ff84c.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/80cb39dbb6fd5266d2feddf8ad18972bd5073600.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/4ec2d5628535e5dd4a55453370c6a7efcf1b62e5.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/ae51f3deb48f8c542cd325c33c292df5e1fe7fde.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/78310a55b319ebc4965596758426cffc1e171628.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/d1160924ab18972bd117e026e0cd7b899e510a28.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/3bf33a87e950352a42f7c5e45543fbf2b3118b4c.jpg"></a>
+                        <a href="#"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/d01373f082025aafb14a9e27fdedab64024f1ae5.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/pic/item/faedab64034f78f0ec4b7a1f7f310a55b2191c9d.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/03087bf40ad162d9b89682f017dfa9ec8b13cde6.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/0eb30f2442a7d933c639049fab4bd11372f0014c.jpg"></a>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/a044ad345982b2b744e7d92837adcbef77099be6.jpg"></a>
+                        <a href="#"><img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/super/pic/item/8c1001e93901213f1a4bae3052e736d12e2e95e6.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/48540923dd54564e5a2504d5b5de9c82d0584f9e.jpg"></a>
+                        <a href="#"><img src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/pic/item/ae51f3deb48f8c542c4225c33c292df5e1fe7f4d.jpg"></a>
+                    </div>
+                </section>
+                <!-- websites navigation end-->
+                <!-- video list -->
+                <section id="video" class="视频">
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=612884470,2464172826&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">《蜀山战纪》花絮之惹毛玉哥的后果很严重</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2396357183,214881853&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">登巴巴归来状态不错 主场球迷力助申花夺冠</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1579764856,3467190272&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">F1阿布扎比站罗斯博格杆位 维泰尔失误仅列第16</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=205175551,2176799880&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">官员花5000万雕刻壁画 相当于一半县财政收入</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=506319822,2684724644&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">美不胜收！黄河壶口瀑布惊现双彩虹</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4047632686,1747683680&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">广西某中学宿舍楼被拆一半 剩余半截仍有学生住</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=789273413,2835044061&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">黑龙江小北湖国家自然保护区发现野生东北虎</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1791867435,3732006547&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">戴维斯杯-穆雷兄弟双打赢球 英国2-1反超比利时</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=612884470,2464172826&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">《蜀山战纪》花絮之惹毛玉哥的后果很严重</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2396357183,214881853&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">登巴巴归来状态不错 主场球迷力助申花夺冠</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1579764856,3467190272&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">F1阿布扎比站罗斯博格杆位 维泰尔失误仅列第16</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=205175551,2176799880&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">官员花5000万雕刻壁画 相当于一半县财政收入</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=506319822,2684724644&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">美不胜收！黄河壶口瀑布惊现双彩虹</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4047632686,1747683680&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">广西某中学宿舍楼被拆一半 剩余半截仍有学生住</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=789273413,2835044061&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">黑龙江小北湖国家自然保护区发现野生东北虎</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1791867435,3732006547&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">戴维斯杯-穆雷兄弟双打赢球 英国2-1反超比利时</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=612884470,2464172826&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">《蜀山战纪》花絮之惹毛玉哥的后果很严重</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2396357183,214881853&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">登巴巴归来状态不错 主场球迷力助申花夺冠</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1579764856,3467190272&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">F1阿布扎比站罗斯博格杆位 维泰尔失误仅列第16</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=205175551,2176799880&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">官员花5000万雕刻壁画 相当于一半县财政收入</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=506319822,2684724644&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">美不胜收！黄河壶口瀑布惊现双彩虹</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4047632686,1747683680&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">广西某中学宿舍楼被拆一半 剩余半截仍有学生住</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=789273413,2835044061&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">黑龙江小北湖国家自然保护区发现野生东北虎</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#"><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1791867435,3732006547&fm=58"></a>
+                        </div>
+                        <p>
+                            <a href="#">戴维斯杯-穆雷兄弟双打赢球 英国2-1反超比利时</a>
+                        </p>
+                    </div>
+                </section>
+                <!-- video list end-->
+                <!-- book list -->
+                <section id="book" class="小说">
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3566235700,1727513671&fm=58&s=3C187E96264168F25AE9E54E0300703F"></div>
+                        <div>
+                            <h4><a href="#">完美世界</a></h4>
+                            <p>作者：辰东</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2708490274,319030395&fm=58&s=9E3269850EF36DB70811A15B03008060"></div>
+                        <div>
+                            <h4><a href="#">莽荒纪</a></h4>
+                            <p>作者：我吃西红柿</p>
+                            <p>状态：已完结</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3508817781,1654561115&fm=58&s=6D83639716736DB3087070600300E070"></div>
+                        <div>
+                            <h4><a href="#">大主宰</a></h4>
+                            <p>作者：天蚕土豆</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3566235700,1727513671&fm=58&s=3C187E96264168F25AE9E54E0300703F"></div>
+                        <div>
+                            <h4><a href="#">完美世界</a></h4>
+                            <p>作者：辰东</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2708490274,319030395&fm=58&s=9E3269850EF36DB70811A15B03008060"></div>
+                        <div>
+                            <h4><a href="#">莽荒纪</a></h4>
+                            <p>作者：我吃西红柿</p>
+                            <p>状态：已完结</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3508817781,1654561115&fm=58&s=6D83639716736DB3087070600300E070"></div>
+                        <div>
+                            <h4><a href="#">大主宰</a></h4>
+                            <p>作者：天蚕土豆</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3566235700,1727513671&fm=58&s=3C187E96264168F25AE9E54E0300703F"></div>
+                        <div>
+                            <h4><a href="#">完美世界</a></h4>
+                            <p>作者：辰东</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2708490274,319030395&fm=58&s=9E3269850EF36DB70811A15B03008060"></div>
+                        <div>
+                            <h4><a href="#">莽荒纪</a></h4>
+                            <p>作者：我吃西红柿</p>
+                            <p>状态：已完结</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3508817781,1654561115&fm=58&s=6D83639716736DB3087070600300E070"></div>
+                        <div>
+                            <h4><a href="#">大主宰</a></h4>
+                            <p>作者：天蚕土豆</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3566235700,1727513671&fm=58&s=3C187E96264168F25AE9E54E0300703F"></div>
+                        <div>
+                            <h4><a href="#">完美世界</a></h4>
+                            <p>作者：辰东</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2708490274,319030395&fm=58&s=9E3269850EF36DB70811A15B03008060"></div>
+                        <div>
+                            <h4><a href="#">莽荒纪</a></h4>
+                            <p>作者：我吃西红柿</p>
+                            <p>状态：已完结</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3508817781,1654561115&fm=58&s=6D83639716736DB3087070600300E070"></div>
+                        <div>
+                            <h4><a href="#">大主宰</a></h4>
+                            <p>作者：天蚕土豆</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3566235700,1727513671&fm=58&s=3C187E96264168F25AE9E54E0300703F"></div>
+                        <div>
+                            <h4><a href="#">完美世界</a></h4>
+                            <p>作者：辰东</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2708490274,319030395&fm=58&s=9E3269850EF36DB70811A15B03008060"></div>
+                        <div>
+                            <h4><a href="#">莽荒纪</a></h4>
+                            <p>作者：我吃西红柿</p>
+                            <p>状态：已完结</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3508817781,1654561115&fm=58&s=6D83639716736DB3087070600300E070"></div>
+                        <div>
+                            <h4><a href="#">大主宰</a></h4>
+                            <p>作者：天蚕土豆</p>
+                            <p>状态：连载中</p>
+                            <p><a href="#">起点中文网</a>&nbsp;&nbsp;<a href="#">更多搜索</a></p>
+                        </div>
+                    </div>
+                </section>
+                <!-- book list end-->
+                <!-- shopping list -->
+                <section id="shopping" class="购物">
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=1fbf4eb24e36acaf4dafccbc41e9a120/dbb44aed2e738bd4674cbfbaa48b87d6267ff9c8.jpg"></a>
+                        <a href="#">良品30元代金券</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C21%2C700%2C424%3Bw%3D470%3Bq%3D80/sign=b08d3fc2edf81a4c327db689ea1a4c6b/2fdda3cc7cd98d10bd578187273fb80e7aec9081.jpg"></a>
+                        <a href="#">五谷鱼粉</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=0b7ee1a7cd95d143ce39be634ec0ae32/b8389b504fc2d562ccecdd49e21190ef77c66ca9.jpg"></a>
+                        <a href="#">麻辣诱惑</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=25a562562bf5e0fefa57d34161501898/09fa513d269759eee8d70d84b4fb43166c22dffe.jpg"></a>
+                        <a href="#">鱼旨寿司</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=f0af7fc0573d26973a9c521d68cb9ecb/c2cec3fdfc03924586cba3058194a4c27d1e25b9.jpg"></a>
+                        <a href="#">南海底</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C470%2C285%3Bw%3D470%3Bq%3D80/sign=6b5a70728101a18be4a4480fa31f2b38/b2de9c82d158ccbf8c0f43641fd8bc3eb1354139.jpg"></a>
+                        <a href="#">肯德基</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D99/sign=e9e96a1b2a2eb938f82220b2e852a905/e824b899a9014c08d308415f0f7b02087bf4f41d.jpg"></a>
+                        <a href="#">韩悦烤肉</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D80/sign=64e9179345166d222c384fd47b1325c7/80cb39dbb6fd5266e104ac4cad18972bd40736be.jpg"></a>
+                        <a href="#">玩味晚市狂欢场</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=1fbf4eb24e36acaf4dafccbc41e9a120/dbb44aed2e738bd4674cbfbaa48b87d6267ff9c8.jpg"></a>
+                        <a href="#">良品30元代金券</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C21%2C700%2C424%3Bw%3D470%3Bq%3D80/sign=b08d3fc2edf81a4c327db689ea1a4c6b/2fdda3cc7cd98d10bd578187273fb80e7aec9081.jpg"></a>
+                        <a href="#">五谷鱼粉</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=0b7ee1a7cd95d143ce39be634ec0ae32/b8389b504fc2d562ccecdd49e21190ef77c66ca9.jpg"></a>
+                        <a href="#">麻辣诱惑</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=25a562562bf5e0fefa57d34161501898/09fa513d269759eee8d70d84b4fb43166c22dffe.jpg"></a>
+                        <a href="#">鱼旨寿司</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=f0af7fc0573d26973a9c521d68cb9ecb/c2cec3fdfc03924586cba3058194a4c27d1e25b9.jpg"></a>
+                        <a href="#">南海底</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C470%2C285%3Bw%3D470%3Bq%3D80/sign=6b5a70728101a18be4a4480fa31f2b38/b2de9c82d158ccbf8c0f43641fd8bc3eb1354139.jpg"></a>
+                        <a href="#">肯德基</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D99/sign=e9e96a1b2a2eb938f82220b2e852a905/e824b899a9014c08d308415f0f7b02087bf4f41d.jpg"></a>
+                        <a href="#">韩悦烤肉</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D80/sign=64e9179345166d222c384fd47b1325c7/80cb39dbb6fd5266e104ac4cad18972bd40736be.jpg"></a>
+                        <a href="#">玩味晚市狂欢场</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=1fbf4eb24e36acaf4dafccbc41e9a120/dbb44aed2e738bd4674cbfbaa48b87d6267ff9c8.jpg"></a>
+                        <a href="#">良品30元代金券</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C21%2C700%2C424%3Bw%3D470%3Bq%3D80/sign=b08d3fc2edf81a4c327db689ea1a4c6b/2fdda3cc7cd98d10bd578187273fb80e7aec9081.jpg"></a>
+                        <a href="#">五谷鱼粉</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=0b7ee1a7cd95d143ce39be634ec0ae32/b8389b504fc2d562ccecdd49e21190ef77c66ca9.jpg"></a>
+                        <a href="#">麻辣诱惑</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=25a562562bf5e0fefa57d34161501898/09fa513d269759eee8d70d84b4fb43166c22dffe.jpg"></a>
+                        <a href="#">鱼旨寿司</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D79/sign=f0af7fc0573d26973a9c521d68cb9ecb/c2cec3fdfc03924586cba3058194a4c27d1e25b9.jpg"></a>
+                        <a href="#">南海底</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C470%2C285%3Bw%3D470%3Bq%3D80/sign=6b5a70728101a18be4a4480fa31f2b38/b2de9c82d158ccbf8c0f43641fd8bc3eb1354139.jpg"></a>
+                        <a href="#">肯德基</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D99/sign=e9e96a1b2a2eb938f82220b2e852a905/e824b899a9014c08d308415f0f7b02087bf4f41d.jpg"></a>
+                        <a href="#">韩悦烤肉</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/bainuo/crop%3D0%2C0%2C720%2C436%3Bw%3D720%3Bq%3D80/sign=64e9179345166d222c384fd47b1325c7/80cb39dbb6fd5266e104ac4cad18972bd40736be.jpg"></a>
+                        <a href="#">玩味晚市狂欢场</a>
+                    </div>
+                </section>
+                <!-- shopping list end-->
+            </div>
+        </div>
+        <!-- page foot -->
+        <div class="footer">
+            <div class="others">
+                <a href="">把百度设为主页</a>
+                <a href="http://home.baidu.com/">关于百度</a>
+                <a href="http://ir.baidu.com/phoenix.zhtml?c=188488&p=irol-homeprofile">About Baidu</a>
+            </div>
+            <div class="copyright">
+                <span>&copy;2015&nbsp;Baidu&nbsp;</span>
+                <a href="https://www.baidu.com/duty/">使用前必读</a>
+                <span>&nbsp;</span>
+                <a href="http://jianyi.baidu.com/">意见反馈</a>
+                <span>&nbsp;京ICP证030173号</span>
+                <img src="./images/20150928192715.png" />
+            </div>
+        </div>
+        <!-- page foot end -->
+    </div>
+    <!-- page container end -->
+    <script type="text/javascript" src="./components/jquery/jquery.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
