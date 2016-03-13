@@ -1,0 +1,154 @@
+/*定义less变量*/
+
+@baseFontSize: 13;
+@baseColorOne: #fbf5b7;
+@baseColorTwo: #da251c;
+@topHeight: 38;
+@bottomHeight: 112;
+@wrapperHeight: @topHeight + @bottomHeight;
+@leftWidth: 150;
+@middleWidth: 898;
+@rightWidth: 75;
+@wrapperWidth: @leftWidth + @middleWidth + @rightWidth;
+
+/*div,ul,strong,li标签默认样式修改*/
+
+div,
+ul {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+strong {
+    font-weight: normal;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    float: left;
+    width: 15px;
+}
+
+
+/*页面主体布局样式*/
+
+.wrapper {
+    width: unit(@wrapperWidth, px);
+    height: unit(@wrapperHeight, px);
+    background-color: #c4c4c4;
+    border: 1px solid #444;
+    box-sizing: content-box;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.top {
+    height: unit(@topHeight, px);
+    width: 100%;
+}
+
+.bottom {
+    height: unit(@bottomHeight, px);
+    width: 100%;
+}
+
+
+/*页面组件样式*/
+
+.arrow {
+    border-left: 16px solid @baseColorTwo;
+    border-top: 10px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.dest__passed {
+    color: #808080;
+}
+
+.dest__current {
+    color: #ff0000;
+}
+
+
+/*页面内容样式*/
+
+.bus-stop {
+    >div {
+        height: unit(@wrapperHeight, px);
+        float: left;
+    }
+    .bus-stop-info {
+        width: unit(@leftWidth, px);
+        .bus-stop-info__to {
+            background-color: @baseColorOne;
+            text-align: right;
+            padding: 10px;
+            padding-bottom: 0;
+            span {
+                font-size: unit(@baseFontSize, px);
+            }
+            strong {
+                font-size: unit(@baseFontSize + 5, px);
+            }
+        }
+        .bus-stop-info__No {
+            display: inline-block;
+            text-align: center;
+            background-color: @baseColorTwo;
+            color: white;
+            h3 {
+                margin: 3px auto;
+                font-weight: normal;
+            }
+            strong {
+                font-size: unit(@baseFontSize * 3, px);
+            }
+            p {
+                font-size: unit(@baseFontSize , px);
+                margin: 6px auto;
+            }
+        }
+    }
+    .bus-stop-dest {
+        width: unit(@middleWidth, px);
+        .bus-stop-dest__map {
+            border-bottom: 5px solid @baseColorTwo;
+            border-right: 8px solid rgba(0, 0, 0, 0);
+            position: relative;
+        }
+        .bus-stop-dest__detail {
+            background-color: @baseColorOne;
+            padding: 0 20px;
+            li {
+                padding: 0 12px;
+                font-size: unit(@baseFontSize + 1, px);
+            }
+        }
+    }
+    .bus-stop-price {
+        width: unit(@rightWidth, px);
+        .bus-stop-price__head {
+            background-color: @baseColorOne;
+            text-align: center;
+            padding-top: 15px;
+            font-size: unit(@baseFontSize + 1, px);
+        }
+        .bus-stop-price__list {
+            background-color: @baseColorTwo;
+            padding: 0 6px;
+            li {
+                font-size: unit(@baseFontSize, px);
+                padding: 3px 3px;
+                color: #fff;
+            }
+        }
+    }
+}
