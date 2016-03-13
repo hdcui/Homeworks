@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Box Model</title>
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+</head>
+
+<body>
+    <!-- box model -->
+    <div class="boxcontainer">
+        <!-- content box -->
+        <div class="div0">
+            <div class="content">这是标准盒子模型的渲染方式这是标准盒子模型的渲染方式这是标准盒子模型的渲染方式这是标准盒子模型的渲染方式这是标准盒子模型的渲染方式这是标准盒子模型的渲染方式这是标准盒子模型的渲染方式</div>
+        </div>
+        <!-- content box end -->
+        <!-- border box -->
+        <div class="div1">
+            <div class="content">这是怪异盒子模型的渲染方式这是怪异盒子模型的渲染方式这是怪异盒子模型的渲染方式这是怪异盒子模型的渲染方式这是怪异盒子模型的渲染方式这是怪异盒子模型的渲染方式这是怪异盒子模型的渲染方式</div>
+        </div>
+        <!-- border box end -->
+        <!-- description -->
+        <div class="explanation">
+            <span>左图为两种不同的盒子模型渲染方式，在设定相同属性条件下的渲染效果对比。左图一为标准盒子模型(content-box)渲染效果，左图二为怪异盒子模型(border-box)渲染效果。从图中可以明显的看出两种渲染方式不同，标准盒模型content部分保持不变，所有设定的padding及border向外延伸；怪异盒子模型盒子大小保持不变，所有设定的padding及border向内部挤压，因此两种渲染方式会造成盒子content区域的巨大差异。请参考代码差异，差异部分用红色字体highlight：</span>
+            <br/>
+            <span><strong>标准盒模型代码：</strong><br/><br/>
+	.div0 {<br/>
+   	 <span class="highlight">box-sizing: content-box;</span>
+            <br/> display: inline-block;
+            <br/> width: 200px;
+            <br/> height: 200px;
+            <br/> border: 20px solid rgb(0, 0, 0);
+            <br/> margin: 50px;
+            <br/> padding: 50px;
+            <br/> background-color: rgb(0, 255, 0);
+            <br/> float: left;
+            <br/>}
+            <br/>
+            </span>
+            <br/>
+            <span><strong>怪异盒模型代码：</strong><br/><br/>
+	.div1 {<br/>
+   	 <span class="highlight">box-sizing: border-box;</span>
+            <br/> display: inline-block;
+            <br/> width: 200px;
+            <br/> height: 200px;
+            <br/> border: 20px solid rgb(0, 0, 0);
+            <br/> margin: 50px;
+            <br/> padding: 50px;
+            <br/> background-color: rgb(0, 255, 0);
+            <br/> float: left;
+            <br/>}
+            <br/>
+            </span>
+        </div>
+        <!-- description end -->
+    </div>
+    <!-- box model end -->
+    <hr/>
+    <!-- flexible box model -->
+    <div class="flex">
+        <!-- keyarea left -->
+        <ul class="keyarea1">
+            <li>
+                <ul class="keygroup1">
+                    <li>Ins</li>
+                    <li>Home</li>
+                    <li>PgUp</li>
+                    <li>Del</li>
+                    <li>End</li>
+                    <li>PgDn</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="keygroup2">
+                    <li>&larr;</li>
+                    <li>&darr;</li>
+                    <li>&rarr;</li>
+                    <li class="up">&uarr;</li>
+                </ul>
+            </li>
+        </ul>
+        <!-- keyarea left end -->
+        <!-- kerarea right -->
+        <ul class="keyarea2">
+            <li>
+                <ul class="keygroup3">
+                    <li class="numlock">Num Lock</li>
+                    <li>7</li>
+                    <li>4</li>
+                    <li>1</li>
+                    <li>&frasl;</li>
+                    <li>8</li>
+                    <li>5</li>
+                    <li>2</li>
+                </ul>
+                <ul class="zero">
+                    <li>0</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="keygroup4">
+                    <li>&lowast;</li>
+                    <li>9</li>
+                    <li>6</li>
+                    <li>3</li>
+                    <li>&sdot;</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="keygroup5">
+                    <li>&minus;</li>
+                    <li>&plus;</li>
+                    <li>Enter</li>
+                </ul>
+            </li>
+        </ul>
+        <!-- keyarea right end -->
+    </div>
+    <!-- flexible box model end -->
+</body>
+
+</html>
