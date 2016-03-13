@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- <!DOCTYPE html> -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+</head>
+
+<body>
+    <!-- page-->
+    <div class="wrapper">
+        <!-- page head -->
+        <div class="header">我是头部</div>
+        <!-- page head end -->
+        <!-- content -->
+        <div class="content">
+            <!-- main content -->
+            <div class="main">
+                <div class="inner">(这里的内容优先渲染，宽度自适应，可以将重要的内容放置在这里。)
+                </div>
+            </div>
+            <!-- main content end -->
+            <!-- sub content -->
+            <div class="sub">(这里的内容次优先渲染，宽度固定)</div>
+            <!-- sub content end -->
+            <!-- extra content -->
+            <div class="extra">(这里的内容最后渲染，宽度固定)</div>
+            <!-- extra content end -->
+        </div>
+        <!-- content end -->
+        <!-- page foot -->
+        <div class="footer">我是底部 版权所有©</div>
+        <!-- page foot end -->
+    </div>
+    <!-- page end -->
+</body>
+
+</html>
