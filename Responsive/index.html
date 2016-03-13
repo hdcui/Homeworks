@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+    <title>百度一下，你就知道</title>
+    <link rel="icon" type="image/x-ico" href="./src/img/baidu-icon.ico" />
+    <link rel="stylesheet" type="text/css" href="./src/css/stylelg.css" media="screen and (min-width:721px)" />
+    <link rel="stylesheet" type="text/css" href="./src/css/stylesm.css" media="screen and (max-width:720px)" />
+</head>
+
+<body>
+    <!-- page container -->
+    <div class="wrapper">
+        <!-- page head -->
+        <div class="header">
+            <!-- weather forecast for mobile -->
+            <div class="weather">
+                <iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=2&t=1&v=0&d=1&bd=0&k=000000&f=&q=1&e=0&a=1&c=70939&w=180&h=36&align=left"></iframe>
+            </div>
+            <!-- weather forecast for mobile end -->
+            <!-- navigation -->
+            <div class="headnav">
+                <a href="http://news.baidu.com/" target="_blank"><b>新闻</b></a>
+                <a href="http://www.hao123.com/" target="_blank"><b>hao123</b></a>
+                <a href="http://map.baidu.com/" target="_blank"><b>地图</b></a>
+                <a href="http://v.baidu.com/i" target="_blank"><b>视频</b></a>
+                <a href="http://tieba.baidu.com/" target="_blank"><b>贴吧</b></a>
+                <a class="login" href="https://passport.baidu.com/v2/?login">登录</a>
+                <a class="set" onmouseover="document.getElementById('setting').style.display='block';" onmouseout="document.getElementById('setting').style.display='none';">设置</a>
+                <a class="more" onmouseover="document.getElementById('hiddenmenu').style.display='block';" onmouseout="document.getElementById('hiddenmenu').style.display='none';">更多产品</a>
+            </div>
+            <!-- navigation end -->
+            <!-- hiddenmenu -->
+            <div id="hiddenmenu" onmouseover="document.getElementById('hiddenmenu').style.display='block';" onmouseout="document.getElementById('hiddenmenu').style.display='none';">
+                <div class="moreproducts">
+                    <a href="">更多产品</a>
+                </div>
+                <div class="nuomi">
+                    <a href="http://www.nuomi.com/"><img src="./src/img/nuomi.png">
+                        <p>糯米</p>
+                    </a>
+                </div>
+                <div class="zhidao">
+                    <a href="http://zhidao.baidu.com/"><img src="./src/img/zhidao.png">
+                        <p>知道</p>
+                    </a>
+                </div>
+                <div class="music">
+                    <a href="http://music.baidu.com/"><img src="./src/img/yinyue.png">
+                        <p>音乐</p>
+                    </a>
+                </div>
+                <div class="photo">
+                    <a href="http://image.baidu.com/"><img src="./src/img/tupian.png">
+                        <p>图片</p>
+                    </a>
+                </div>
+                <div class="lib">
+                    <a href="http://wenku.baidu.com/"><img src="./src/img/wenku.png">
+                        <p>文库</p>
+                    </a>
+                </div>
+                <div class="rank">
+                    <a href="http://top.baidu.com/"><img src="./src/img/rank.png">
+                        <p>风云榜</p>
+                    </a>
+                </div>
+                <div class="spread">
+                    <a href="http://e.baidu.com/"><img src="./src/img/spread.png">
+                        <p>百度推广</p>
+                    </a>
+                </div>
+                <div class="allproducts">
+                    <a href="https://www.baidu.com/more/">
+                        <p>全部产品&gt;&gt;</p>
+                    </a>
+                </div>
+            </div>
+            <!-- hidden menu end -->
+            <!-- setting menu -->
+            <div id="setting" onmouseover="document.getElementById('setting').style.display='block';" onmouseout="document.getElementById('setting').style.display='none';">
+                <div class="arrow">
+                    <div class="arw0"></div>
+                    <div class="arw1"></div>
+                </div>
+                <a href="">搜索设置</a>
+                <a href="">高级搜索</a>
+                <a href="">关闭预测</a>
+                <a href="">搜索历史</a>
+            </div>
+            <!-- setting menu end -->
+            <!-- search box -->
+            <div class="search">
+                <div class="imagecontainer">
+                    <img src="./src/img/bd_logo1.png" />
+                </div>
+                <div class="searchbox">
+                    <form action="https://www.baidu.com/s" method="get" target="_self">
+                        <!-- input area for mobile -->
+                        <input id="mobiletextarea" class="text_area" name="wd" type="textarea" />
+                        <!-- input area for mobile end -->
+                        <input id="text_area" class="text_area" name="wd" type="textarea" autofocus="autofocus" onfocus="this.style.border='1px solid rgb(57, 139, 251)';" onblur="this.style.border='solid 1px rgb(200, 200, 200)';" />
+                        <input class="baidubutton" type="submit" value="百度一下" />
+                    </form>
+                </div>
+            </div>
+            <!-- search box end -->
+            <!-- mobile navigation bar -->
+            <div class="navbar">
+                <a href="http://m.baidu.com/news?fr=mohome&ssid=0&from=844b&uid=&pu=sz%401320_2001%2Cta%40iphone_1_8.0_3_600&bd_page_type=1"><img src="./src/img/mobile1.png"><span>新闻</span></a>
+                <a href="http://dushu.baidu.com/"><img src="./src/img/mobile2.png"><span>小说</span></a>
+                <a href="http://video.m.baidu.com/?from=wise_nav"><img src="./src/img/mobile3.png"><span>视频</span></a>
+                <a href="http://life.m.baidu.com/?sfrom=wise_nav"><img src="./src/img/mobile4.png"><span class="spe">生活+</span></a>
+                <a href="http://map.baidu.com/mobile/webapp/index/index/?itj=45&wtj=wi&ssid=0&from=844b&uid=&pu=sz%401320_2001%2Cta%40iphone_1_8.0_3_600&bd_page_type=1"><img src="./src/img/mobile5.png"><span>地图</span></a>
+                <a href=""><img src="./src/img/mobile6.png"><span>更多</span></a>
+            </div>
+            <!-- mobile navigation bar end -->
+        </div>
+        <!-- page head end -->
+        <!-- content on moblie -->
+        <div class="content1">
+            <img src="./src/img/mobile7.png">
+            <h2>常用网址</h2>
+            <a href="" class="btn"></a>
+            <div>
+                <a href="http://tieba.baidu.com/?mo_device=1&itj=43">贴吧</a>
+                <a href="http://m.hao123.com/?itj=49">hao123</a>
+                <a href="http://map.baidu.com/mobile/webapp/index/index?itj=45&wtj=wi&showcvr=1">地图</a>
+                <a href="http://vip.baidu.com/wise/?vip_frm=wise_wz">百度VIP</a>
+            </div>
+            <div class="row2">
+                <a href="http://image.baidu.com/search/wiseindex?tn=wiseindex&wiseps=1">图片</a>
+                <a href="http://music.baidu.com/?itj=420&fr=music_wise1">音乐</a>
+                <a href="http://m.nuomi.com/?cid=bdsywz">糯米</a>
+                <a href=""></a>
+            </div>
+        </div>
+        <div class="content2">
+            <img src="./src/img/mobile17.png">
+            <h2>生活服务</h2>
+            <a href="" class="btn"></a>
+            <div>
+                <span>点击定位，查看附近位置信息</span>
+            </div>
+            <div>
+                <a href="http://m.dianying.baidu.com/?sfrom=wise_film_info&subchannel=wiseservice&w=%220_0_%E7%94%B5%E5%BD%B1%22"><img src="./src/img/mobile9.png">
+                    <p>电影</p>
+                </a>
+                <a href="http://m.nuomi.com/?cid=tgsy&w=%220_0_%E5%9B%A2%E8%B4%AD%22"><img src="./src/img/mobile10.png">
+                    <p>团购</p>
+                </a>
+                <a href="http://waimai.baidu.com/mobile/waimai?qt=confirmcity&utm_source=baidu&utm_medium=wise&utm_content=default&utm_term=default&utm_campaign=default&cid=993678&w=%220_0_%E5%A4%96%E5%8D%96%22"><img src="./src/img/mobile11.png">
+                    <p>外卖</p>
+                </a>
+                <a href="https://rentcar.baidu.com/zuche/index/&w=%220_0_%E6%89%93%E8%BD%A6%22"><img src="./src/img/mobile12.png">
+                    <p>打车</p>
+                </a>
+            </div>
+            <div class="row2">
+                <a href="http://touch.qunar.com/h5/hotel/?bd_source=baidusearch_hotel&w=%220_0_%E9%85%92%E5%BA%97%22"><img src="./src/img/mobile13.png">
+                    <p>酒店</p>
+                </a>
+                <a href="http://m.nuomi.com/326/0-0/0-0-0-0-0?cid=fjms&w=%220_0_%E7%BE%8E%E9%A3%9F%22"><img src="./src/img/mobile14.png">
+                    <p>美食</p>
+                </a>
+                <a href="http://m.nuomi.com/341/0-0/0-0-0-0-0?cid=fjktv&w=%220_0_KTV%22"><img src="./src/img/mobile15.png">
+                    <p>KTV</p>
+                </a>
+                <a href="http://map.baidu.com/mobile/webapp/search/search/qt=s&wd=%E9%93%B6%E8%A1%8C&third_party=webapp_wise_nearby&w=%220_0_%E9%93%B6%E8%A1%8C%22&c=218/"><img src="./src/img/mobile16.png">
+                    <p>银行</p>
+                </a>
+            </div>
+        </div>
+        <!-- content on moblie end -->
+        <!-- page foot -->
+        <!-- footer of mobile -->
+        <div class="mobilefooter">
+            <a href="http://m.baidu.com/pub/help.php?pn=25&ssid=0&from=844b&uid=&pu=sz%401320_1001%2Cta%40iphone_2_4.4_3_537&bd_page_type=1">使用百度前必读</a>
+            <a href="http://m.baidu.com/pub/help.php?pn=25&ssid=0&from=844b&uid=&pu=sz%401320_1001%2Cta%40iphone_2_4.4_3_537&bd_page_type=1">Baidu</a>
+            <a href="http://m.baidu.com/pub/help.php?pn=25&ssid=0&from=844b&uid=&pu=sz%401320_1001%2Cta%40iphone_2_4.4_3_537&bd_page_type=1">京ICP证030173号</a>
+        </div>
+        <!-- footer of mobile end -->
+        <div class="footer">
+            <div class="others">
+                <a href="">把百度设为主页</a>
+                <a href="http://home.baidu.com/">关于百度</a>
+                <a href="http://ir.baidu.com/phoenix.zhtml?c=188488&p=irol-homeprofile">About Baidu</a>
+            </div>
+            <div class="copyright">
+                <span>&copy;2015&nbsp;Baidu&nbsp;</span>
+                <a href="https://www.baidu.com/duty/">使用前必读</a>
+                <span>&nbsp;</span>
+                <a href="http://jianyi.baidu.com/">意见反馈</a>
+                <span>&nbsp;京ICP证030173号</span>
+                <img src="./src/img/20150928192715.png" />
+            </div>
+        </div>
+        <!-- page foot end -->
+    </div>
+    <!-- page container end -->
+</body>
+
+</html>
